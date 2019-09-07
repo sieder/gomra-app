@@ -1,0 +1,93 @@
+.header-container {
+  background: #272a37;
+
+  .header {
+    padding-top: 40px;
+    align-items: center;
+    display: flex;
+
+    .header-logo {
+      padding-left: 110px;
+      width: 171px;
+      height: 40px;
+    }
+
+    .right-menu {
+      display: flex;
+      // position: absolute;
+      justify-content: flex-end;
+      width: 100%;
+
+      .options {
+        // width: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        //   justify-content: flex-end;
+        padding-right: 100px;
+        //   position: absolute;
+
+        .options {
+          padding: 10px 15px;
+          font-family: Teko;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 29px;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.02em;
+
+          color: #625fff;
+        }
+      }
+
+      .img-search {
+        background-image: url("../../assets/header/search-icon.svg");
+        background-color: #625fff;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        width: 40px;
+        height: 40px;
+        outline: none;
+        border-radius: 50%;
+        background-position: right 10px center;
+        border: #625fff;
+
+        -webkit-transition: all 2s ease;  
+        -moz-transition: all 2s ease;  
+        -o-transition: all 2s ease;  
+        -ms-transition: all 2s ease;  
+        transition: all 2s ease;
+
+      }
+
+      .img-search-clicked {
+        background-image: url("../../assets/header/search-icon.svg");
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        width: 500px;
+        height: 40px;
+        outline: none;
+        border-radius: 50px;
+        background-position: right 10px center;
+        border: #625fff;
+        padding-left: 20px;
+
+
+        font-family: Teko;
+        font-style: normal;
+        font-size: 20px;
+        letter-spacing: 0.02em;
+
+        -webkit-transition: all 2s ease;  
+        -moz-transition: all 2s ease;  
+        -o-transition: all 2s ease;  
+        -ms-transition: all 2s ease;  
+        transition: all 2s ease;
+
+      }
+    }
+  }
+}
