@@ -1,0 +1,41 @@
+.registration-info {
+  background: #272a37;
+  width: 40%;
+  height: 620px;
+  flex: 1;
+  border-radius: 0px 12px 12px 0px;
+
+  img {
+    padding-top: 60px;
+    width: 100%;
+    height: 172px;
+  }
+
+  h2 {
+    font-family: Brisk Pro;
+    font-size: 16px;
+    line-height: 94%;
+    /* or 15px */
+
+    // display: flex;
+    // align-items: center;
+    padding-top: 40px;
+    text-align: center;
+    letter-spacing: -0.06em;
+
+    color: #ffffff;
+  }
+
+  p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    /* or 17px */
+
+    text-align: center;
+
+    color: #E5E5E5;
+  }
+}

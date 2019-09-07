@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+ 
+
+.custom-button {
+    // min-width: 165px;
+    font-family: Teko;
+    font-style: normal;
+    width: 100%;
+    background-color: #625FFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    font-size: 18px;
+    // padding: 10px 10px 10px 55px;
+    // padding-left: 55px;
+    height: 42px;
+  
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+  }
+

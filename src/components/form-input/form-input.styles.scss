@@ -1,0 +1,89 @@
+$sub-color: #aaa9d2;
+$main-color: white;
+
+@mixin shrinkLabel {
+  top: -5px;
+  left: 30px;
+  font-size: 10px;
+  opacity: 1;
+  color: $sub-color;
+}
+
+.group {
+  position: relative;
+  margin: 15px 0;
+
+  .form-input {
+    border-radius: 100px;
+    background: #272a37;
+    background-color: #272a37;
+    color: $sub-color;
+    font-size: 18px;
+    padding: 10px 10px 10px 55px;
+    display: block;
+    width: 100%;
+    height: 42px;
+    border: none;
+    // border-bottom: 1px solid $sub-color;
+    // background-image: url('') use this line for background icon inside input
+    // margin: 25px 0;
+    background-repeat: no-repeat;
+    background-position: 30px center;
+    background-size: 12px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box;
+
+
+   
+
+    
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  // Use this line to change the icon
+  // .form-input[name='email'] {
+  //   background-color: aqua;
+  // }
+
+  input[type="password"] {
+    letter-spacing: 0.3em;
+  }
+
+  .form-input-label {
+    // font-family: Roboto;
+    // font-style: normal;
+    color: $sub-color;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    align-content: center;
+    pointer-events: none;
+    left: 55px;
+    top: 15px;
+    transition: 300ms ease all;
+    opacity: 0.5;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}
+
+
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//     transition: all 5000s ease-in-out 0s;
+//     transition-property: background-color, color;
+//     // margin-left: 20%;
+// }
