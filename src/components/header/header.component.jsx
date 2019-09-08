@@ -5,7 +5,7 @@ import { auth } from '../../firebase/firebase.utils'
 
 import Navigation from '../navigation/navigation.component'
 
-import TitleLogo from '../../assets/title-logo/gomra-title-logo.png'
+import TitleLogo from '../../assets/header/gomra-logo.png'
 import './header.styles.scss'
 
 class Header extends React.Component {
