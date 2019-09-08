@@ -6,6 +6,8 @@ import CustomButton from '../custom-button/custom-button.component'
 import LockInputIcon from '../../assets/form-input-icons/signin/lock.png'
 import EnvelopeInputIcon from '../../assets/form-input-icons/signin/envelope.png'
 import GomraTitleLogo from '../../assets/title-logo/gomra-title-logo.png'
+import FacebookIcon from '../../assets/facebook-icon.png'
+import GoogleIcon from '../../assets/google-icon.png'
 
 import PasswordHide from '../../assets/form-input-icons/password-hide.svg'
 import PasswordShow from '../../assets/form-input-icons/password-show.svg'
@@ -61,7 +63,7 @@ class SignIn extends React.Component {
                     <form className='sign-in-form' onSubmit={this.handleSubmit} >
                         <h1 className='sign-in-h1'>SIGN IN</h1>
                         <FormInput
-                            style={{  background: `#2A2E41 url(${EnvelopeInputIcon}) no-repeat 30px center` }}
+                            style={{ background: `#2A2E41 url(${EnvelopeInputIcon}) no-repeat 30px center` }}
                             name='email'
                             value={email}
                             handleChange={this.handleChange}
@@ -93,12 +95,36 @@ class SignIn extends React.Component {
                             onClick={this.handleShowPasword}
                         >
                         </span>
+                        <p className='forgot-your-password'>Forgot your password?</p>
                         <CustomButton type="submit" value="Submit Form">Sign in</CustomButton>
-                        <CustomButton onClick={signInWithGoogle} >Sign in with Google</CustomButton>
+
+                        <div className='sign-in-footer'>
+                            <p className='sign-in-p'>or sign in with</p>
+                            <div className='sign-in-social-media'>
+
+                                <img
+                                    src={FacebookIcon}
+                                    alt='facebook-icon'
+                                />
+                                <p className='facebook-icon-option' >Facebook</p>
+
+
+                                <img
+                                    src={GoogleIcon}
+                                    alt='google-icon'
+                                    style={{ paddingLeft: '10px' }}
+                                />
+                                <p onClick={signInWithGoogle} className='google-icon-option'>
+                                    Google
+                                    </p>
+
+                            </div>
+
+                        </div>
                     </form>
                 </div>
                 <div className='sign-in-content'>
-                            <Link to='/register' >SignUp</Link>
+                    <Link to='/register' >SignUp</Link>
                 </div>
             </div>
         )
