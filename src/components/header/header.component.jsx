@@ -10,8 +10,8 @@ import './header.styles.scss'
 
 class Header extends React.Component {
 
-    constructor({ currentUser }) {
-        super(currentUser)
+    constructor() {
+        super()
 
         this.state = {
             searchStatus: 'img-search',
@@ -62,8 +62,7 @@ class Header extends React.Component {
                     <img className='header-logo' src={TitleLogo} alt="TitleLogo"></img>
                     <div className='right-menu'>
                         <div className='options'>
-                            <Link className='options'>CREATE POST</Link>
-                            {/* {console.log("curren user", this.props.currentUser)} */}
+                            <Link className='options' to='/signin'>CREATE POST</Link>
                             {
                                 
                                 this.props.currentUser ?
@@ -71,7 +70,6 @@ class Header extends React.Component {
                                     :
                                     <Link className='options' to='/signin'>SIGN IN</Link>
                             }
-
                             <input
                                 className={searchStatus}
                                 onClick={this.searchClicked}
