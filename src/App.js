@@ -38,7 +38,7 @@ unsubscribeFromAuth = null
         })
       } else {
         this.setState({ currentUser: userAuth })
-        console.log('user local data:', this.state.currentUser)
+        // console.log('user local data:', this.state.currentUser)
       }
     })
   }
