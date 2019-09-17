@@ -32,11 +32,23 @@ class Registration extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
 
-        this.setState({ email: '', password: '', username: '', confirmPassword: '' })
+        const { password, confirmPassword } = this.state 
+        if (password !== confirmPassword ) {
+            alert('Password does not match!')
+            return
+        } else {
+            this.setState({ email: '', password: '', username: '', confirmPassword: '' })
+        }
     }
     handleChange = event => {
         const { value, name } = event.target
         this.setState({ [name]: value })
+
+        if ( !Object.values(this.state).every(Boolean) ) {
+            this.setState({
+                disabled: false
+            })
+        }
     }
 
     handleShowPasword = () => {
@@ -67,7 +79,7 @@ class Registration extends React.Component {
 
                     <h1 className='registration-h1'>CREATE ACCOUNT</h1>
 
-                    <form className="registration-form-field" >
+                    <form className="registration-form-field" onSubmit={this.handleSubmit}>
                         <FormInput
                             style={{ backgroundImage: `url(${EnvelopeInputIcon})` }}
                             name="email"
