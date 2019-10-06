@@ -24,39 +24,33 @@ class Registration extends React.Component {
             password: '',
             confirmPassword: '',
             hidden: 'password',
-            passwordIcon: PasswordShow,
-            disabled: true
+            passwordIcon: PasswordShow
         }
     }
 
     handleSubmit = event => {
         event.preventDefault()
 
-        const { password, confirmPassword } = this.state 
-        if (password !== confirmPassword ) {
+        const { password, confirmPassword } = this.state
+        if (password !== confirmPassword) {
             alert('Password does not match!')
             return
-        } else {
-            this.setState({ email: '', password: '', username: '', confirmPassword: '' })
         }
+
+        this.setState({ email: '', password: '', username: '', confirmPassword: '' })
+
     }
     handleChange = event => {
         const { value, name } = event.target
         this.setState({ [name]: value })
-
-        if ( !Object.values(this.state).every(Boolean) ) {
-            this.setState({
-                disabled: false
-            })
-        }
     }
 
     handleShowPasword = () => {
-        this.setState({ 
-            hidden: !this.state.hidden 
+        this.setState({
+            hidden: !this.state.hidden
         }, () => {
             console.log(this.state.hidden)
-            if(this.state.hidden) {
+            if (this.state.hidden) {
                 this.setState({
                     passwordIcon: PasswordShow
                 })
@@ -70,7 +64,8 @@ class Registration extends React.Component {
 
     render() {
 
-        const { disabled, email, username, hidden, password, passwordIcon, confirmPassword } = this.state
+        const { email, username, hidden, password, passwordIcon, confirmPassword } = this.state
+        const noEmptySpace = Object.values(this.state).some(value => !value)
 
         return (
             <div className="registration" style={{ backgroundImage: `url(${GomraTitleLogo})` }}>
@@ -149,7 +144,8 @@ class Registration extends React.Component {
                         </span>
 
                         <br />
-                        <CustomButton disabled={disabled}>Sign Up</CustomButton>
+                        {console.log(noEmptySpace)}
+                        <CustomButton disabled={noEmptySpace} >Sign Up</CustomButton>
                         <div className="registration-footer">
 
                             <p>or sign up with <FontAwesomeIcon icon={faFacebookSquare} /> </p>
